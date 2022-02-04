@@ -39,7 +39,7 @@ function yoo_listado_clases()
         <?php
          $arg=array(
            'post_type' => 'nueva_opt',
-           'post_per_page' => 10,
+           'post_per_page' => -1,
            'order' => 'ASC',
            'orderby' => 'title'
          );
@@ -47,8 +47,10 @@ function yoo_listado_clases()
           while( $clases->have_posts()): $clases->the_post();?>
          
           <li class="clase card">
+              <div class="degradar">
               <?php the_post_thumbnail('normal');?>
-              <div class="contenido">
+              </div>
+              <div class="contenidop">
                   <a href="<?php  the_permalink(); ?>">
                       <h3><?php the_title();?></h3>
                   </a>
@@ -68,7 +70,35 @@ function yoo_listado_clases()
         ?>
     </ul>
 
+    
+
 <?php
  }
+ //widgets
+function  yoo_widgets()
+{
+    register_sidebar(array(
+        'name' => 'Sidebar1',
+        'id'=>'sidebar1',
+        'before-widget'=>'<div class="widget">',
+        'after-widget'=> '</div>',
+        'before-title'=> '<h3>',
+        'after-title'=> '</h3>'
 
+
+    ));
+    register_sidebar(array(
+        'name' => 'Sidebar2',
+        'id'=>'sidebar2',
+        'before-widget'=>'<div class="widget">',
+        'after-widget'=> '</div>',
+        'before-title'=> '<h3>',
+        'after-title'=> '</h3>'
+
+
+    ));
+
+}
+
+add_action('widgets_init','yoo_widgets');
 ?>

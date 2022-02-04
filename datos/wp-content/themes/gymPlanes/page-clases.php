@@ -14,6 +14,7 @@ get_header();?>
         <p><?php the_content()?></p>
         <?php
         endwhile;
+        yoo_listado_clases()
         ?>    
 </div>
 </main>

@@ -43,6 +43,8 @@ body {
     line-height: 2;
     font-family: var(--fuenteNormal);
     background-color: var(--colorFondo);
+    
+    
   }  
 h1,h2,h3,h4{
  font-family: var(--fuenteTitulo);
@@ -64,11 +66,13 @@ h4{ font-size: 2.4rem}
 .contenedor{
     max-width: 1200px;
     width: 90%;
+    margin:2%;
     
 }
 
 .menucss{
     display: none;
+    margin: 0;
 }
 
 .navegacion{
@@ -159,6 +163,7 @@ h4{ font-size: 2.4rem}
         display:none;
     }
 
+    
 }
 
  /* SLICKNAV */
@@ -210,4 +215,90 @@ h4{ font-size: 2.4rem}
 
 aside{
     flex: 0 0 calc(20% - 2rem);
+}
+
+/* CSS PAGINA  */
+
+.listadoclases{
+    list-style: none;
+    padding:0;
+    margin:0;
+}
+
+.listadoclases .card img{
+    max-width: 100%;
+    height: auto;
+}
+
+.listadoclases .card {
+
+}
+.listadoclases .card .contenidop a{
+    text-align: center;
+    color:var(--colorTitulo);
+}
+
+.listadoclases .card p{
+    text-align: center;
+    font-size: 3rem;
+}
+
+@media(min-width:768px){
+    .listadoclases{
+        list-style: none;
+        padding:0;
+        margin:0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    
+    .listadoclases .card {
+        width: 45%;
+        position: relative;
+        margin-bottom: 2rem;
+    }
+    .listadoclases .card .contenidop a{
+        padding:0;
+        color:white;
+        margin: 0;
+        
+    }
+    
+    .listadoclases .card p{
+        text-align: center;
+        font-size: 3rem;
+        
+        color:yellow;
+
+    }
+
+    .listadoclases .contenidop{
+        position: absolute;
+        left:0;
+        bottom: 2rem;
+        padding: 0 2rem;
+    }
+    .listadoclases .card h3{
+        margin:0;
+        text-align: left;
+    }
+    .listadoclases img{
+        display: block;
+        
+    }
+    .degradar::after{
+        /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#000000+6,000000+96&0+8,0.7+96 */
+        content:"";
+        display:block;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: -moz-linear-gradient(top,  rgba(0,0,0,0) 6%, rgba(0,0,0,0) 8%, rgba(0,0,0,0.7) 96%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 6%,rgba(0,0,0,0) 8%,rgba(0,0,0,0.7) 96%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to bottom,  rgba(0,0,0,0) 6%,rgba(0,0,0,0) 8%,rgba(0,0,0,0.7) 96%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#b3000000',GradientType=0 ); /* IE6-9 */
+            }
 }
