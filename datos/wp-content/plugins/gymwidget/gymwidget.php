@@ -45,7 +45,7 @@ class jag_widget extends WP_Widget {
         <ul class="lado">
         <?php
          $arg=array(
-           'post_type' => 'a_loquequiera',
+           'post_type' => 'nueva_opt',
            'posts_per_page' => $cantidad,
            'orderby' => 'rand'
            
