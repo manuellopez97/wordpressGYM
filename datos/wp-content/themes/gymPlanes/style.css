@@ -219,29 +219,31 @@ aside{
 
 /* CSS PAGINA  */
 
-.listadoclases{
+.listadoclases, .listado-blog{
     list-style: none;
     padding:0;
     margin:0;
 }
 
-.listadoclases .card img{
+.listadoclases .card img, .listado-blog .card img{
     max-width: 100%;
     height: auto;
 }
 
-.listadoclases .card .contenidop a{
+.listadoclases .card .contenidop a,
+.listado-blog .card .contenidop a{
     text-align: center;
     color:var(--colorTitulo);
 }
 
-.listadoclases .card p{
+.listadoclases .card p
+.listado-blog .card p{
     text-align: center;
     font-size: 3rem;
 }
 
 @media(min-width:768px){
-    .listadoclases{
+    .listadoclases, .listado-blog{
         list-style: none;
         padding:0;
         margin:0;
@@ -250,19 +252,22 @@ aside{
         justify-content: space-between;
     }
     
-    .listadoclases .card {
+    .listadoclases .card,
+    .listado-blog .card {
         width: 45%;
         position: relative;
         margin-bottom: 2rem;
     }
-    .listadoclases .card .contenidop a{
+    .listadoclases .card .contenidop a,
+    .listado-blog .card .contenidop a{
         padding:0;
         color:white;
         margin: 0;
         
     }
     
-    .listadoclases .card p{
+    .listadoclases .card p,
+    .listado-blog .card p{
         text-align: center;
         font-size: 3rem;
         
@@ -270,17 +275,20 @@ aside{
 
     }
 
-    .listadoclases .contenidop{
+    .listadoclases .contenidop,
+    .listado-blog .contenidop{
         position: absolute;
         left:0;
         bottom: 2rem;
         padding: 0 2rem;
     }
-    .listadoclases .card h3{
+    .listadoclases .card h3,
+    .listado-blog .card h3{
         margin:0;
         text-align: left;
     }
-    .listadoclases img{
+    .listadoclases img,
+    .listado-blog img{
         display: block;
         
     }
@@ -343,4 +351,44 @@ aside{
 .sidebar > li{
     list-style: none;
     margin-left: 20%;
+}
+
+/* GALERIA */
+.galeria-imagenes{
+    display: grid;
+    list-style: none;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(6,auto);
+    grid-gap: 2rem;
+}
+
+.galeria-imagenes img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.galeria-imagenes li:nth-child(4){
+    grid-row: 2 / 4;
+    grid-column: 2 / 3;
+}
+
+.galeria-imagenes li:nth-child(5){
+    grid-row: 4 / 6;
+    grid-column: 2 / 3;
+}
+
+@media(min-width: 768px){
+    .galeria-imagenes{
+        grid-template-columns: repeat(4,1fr);
+    }
+    .galeria-imagenes li:nth-child(4){
+        grid-row: 1 / 3;
+        grid-column: 4 / 5;
+    }
+    
+    .galeria-imagenes li:nth-child(5){
+        grid-row-start: 3 ;
+        grid-column-end: 2;
+    }
 }
