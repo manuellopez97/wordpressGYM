@@ -392,3 +392,13 @@ aside{
         grid-column-end: 2;
     }
 }
+
+/* Mi Botoncito del home */
+.botoncito{
+    text-align: center;
+    margin-left: 42%;
+    width: 20rem;
+    height: 5rem;
+    border-radius: 3px 3px;
+    cursor: pointer;
+}

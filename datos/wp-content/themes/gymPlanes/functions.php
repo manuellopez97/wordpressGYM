@@ -41,13 +41,13 @@ function yoo_imagen()
 }
 add_action('after_setup_theme','yoo_imagen');
 
-function yoo_listado_clases()
+function yoo_listado_clases($elemento = -1)
  {?>
     <ul class="listadoclases">
         <?php
          $arg=array(
            'post_type' => 'nueva_opt',
-           'post_per_page' => -1,
+           'posts_per_page' => $elemento,
            'order' => 'ASC',
            'orderby' => 'title'
          );
@@ -78,6 +78,48 @@ function yoo_listado_clases()
         ?>
     </ul>
 
+<?php
+ }
+
+    function yoo_listado_instructores($elemento = -1)
+ {?>
+    <ul class="listadoclases">
+        <?php
+         $arg=array(
+           'post_type' => 'instructor_opt',
+           'posts_per_page' => $elemento,
+           'order' => 'ASC',
+           'orderby' => 'title'
+         );
+          $instructores= new WP_Query($arg);
+          while( $instructores->have_posts()): $instructores->the_post();?>
+         
+          <li class="clase card">
+              <div class="degradar">
+              <?php the_post_thumbnail('normal');?>
+              </div>
+              <div class="contenidop">
+                  <a href="<?php  the_permalink(); ?>">
+                      <h3><?php the_title();?></h3>
+                  </a>
+                  <p>
+                      <?php
+                      $nombre= get_field('nombre_instructor');
+                      $tipoclase= get_field('tipo_clase');
+                      $antiguedad= get_field('antiguedad');
+                      echo " $nombre da clases de $tipoclase";?><br>
+                      <?php echo "Antiguedad en nuestro gimnasio; $antiguedad";
+                      ?>
+                  </p>
+             
+              </div>
+          </li>
+          <?php endwhile;
+       
+        ?>
+    </ul>
+    
+
     
 
 <?php
@@ -106,7 +148,7 @@ function  yoo_widgets()
 
     ));
 
+    
 }
-
 add_action('widgets_init','yoo_widgets');
 ?>

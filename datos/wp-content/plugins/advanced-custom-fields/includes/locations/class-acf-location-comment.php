@@ -45,7 +45,6 @@ if ( ! class_exists( 'ACF_Location_Comment' ) ) :
 			}
 			return $this->compare_to_rule( $comment, $rule );
 		}
-		
 
 		/**
 		 * Returns an array of possible values for this rule type.
